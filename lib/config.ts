@@ -1,9 +1,9 @@
 import {z} from "zod";
 
-const envSchema = z.object({
+export const envSchema = z.object({
     DATABASE_URL: z.url(),
 })
 
-const env = envSchema.parse(process.env)
+const env = envSchema.safeParse(process.env)
 
 export default env;
